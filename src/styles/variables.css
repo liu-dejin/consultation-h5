@@ -1,0 +1,49 @@
+/* 优医问诊主题色（CSS 变量） */
+
+:root {
+  /* 优医品牌色 */
+  --cp-primary: #16c2a3;
+  --cp-plain: #eaf8f6;
+  --cp-orange: #fca21c;
+  --cp-text1: #121826;
+  --cp-text2: #3c3e42;
+  --cp-text3: #6f6f6f;
+  --cp-tag: #848484;
+  --cp-dark: #979797;
+  --cp-tip: #c3c3c5;
+  --cp-disable: #d9dbde;
+  --cp-line: #ededed;
+  --cp-bg: #f6f7f9;
+  --cp-price: #eb5757;
+
+  /* 兼容旧脚手架变量（避免历史代码失效） */
+  --primary-color: var(--cp-primary);
+  --success-color: var(--cp-primary);
+  --warning-color: var(--cp-orange);
+  --danger-color: var(--cp-price);
+  --bg-color: var(--cp-bg);
+  --bg-white: #ffffff;
+  --text-color: var(--cp-text1);
+  --text-secondary: var(--cp-text3);
+  --border-color: var(--cp-line);
+
+  /* 覆盖 antd-mobile 主题色 */
+  --adm-color-primary: var(--cp-primary);
+  --adm-color-success: var(--cp-primary);
+  --adm-color-warning: var(--cp-orange);
+  --adm-color-danger: var(--cp-price);
+  --adm-color-white: #ffffff;
+  --adm-color-text: var(--cp-text1);
+  --adm-color-text-secondary: var(--cp-text3);
+  --adm-color-weak: var(--cp-tip);
+  --adm-color-light: var(--cp-disable);
+  --adm-color-border: var(--cp-line);
+  --adm-color-background: var(--cp-bg);
+  --adm-color-box: var(--cp-bg);
+
+  /* 底部 Tab 高度 */
+  --tab-bar-height: 50px;
+
+  /* 安全区兜底（不支持 env 的浏览器） */
+  --safe-area-bottom: env(safe-area-inset-bottom, 0px);
+}

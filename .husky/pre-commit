@@ -1,0 +1,5 @@
+#!/bin/sh
+# 预提交钩子：对暂存区文件执行格式化与检查
+# 项目已迁移至 fullStack 根目录，直接在根目录执行 lint-staged
+
+npx lint-staged

@@ -1,0 +1,22 @@
+/* 全局通用样式 */
+
+#root {
+  min-height: 100dvh;
+  background: var(--bg-color);
+}
+
+/* 页面内容区：为底部 Tab 预留空间，并适配安全区 */
+.page-content {
+  min-height: 100dvh;
+  padding-bottom: calc(var(--tab-bar-height) + var(--safe-area-bottom));
+}
+
+/* 固定在底部的操作区需额外处理安全区 */
+.fixed-bottom {
+  padding-bottom: var(--safe-area-bottom);
+}
+
+/* 修复 Tailwind preflight 将 svg 设为 block，导致 Toast 图标不再受 text-align:center 控制而偏左 */
+.adm-toast-icon svg {
+  display: inline-block;
+}
