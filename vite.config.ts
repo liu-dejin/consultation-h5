@@ -5,7 +5,6 @@ import { defineConfig } from "vite";
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  // 路径别名：@ 指向 src
   resolve: {
     alias: {
       "@": `${import.meta.dirname}/src`,
@@ -13,19 +12,16 @@ export default defineConfig({
   },
   server: {
     port: 5173,
-    host: true,
-    // 接口代理示例（按需修改目标地址）
     proxy: {
       "/api": {
-        target: "http://localhost:8080",
+        target: "http://127.0.0.1:8080",
         changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, ""),
       },
     },
   },
   build: {
-    // 生产环境不生成 sourcemap
     sourcemap: false,
-    // 分包优化：拆分第三方依赖
     rollupOptions: {
       output: {
         manualChunks(id) {

@@ -11,6 +11,8 @@ const Category = lazy(() => import("@/pages/Category"));
 const Profile = lazy(() => import("@/pages/Profile"));
 const NotFound = lazy(() => import("@/pages/NotFound"));
 const Login = lazy(() => import("@/pages/Login"));
+const Register = lazy(() => import("@/pages/Register"));
+const ForgotPassword = lazy(() => import("@/pages/ForgotPassword"));
 
 /**
  * 懒加载包裹（统一 Suspense 兜底）
@@ -29,6 +31,8 @@ function withSuspense(Component: ComponentType) {
  */
 export const router = createBrowserRouter([
   { path: "login", element: withSuspense(Login) },
+  { path: "register", element: withSuspense(Register) },
+  { path: "forgot-password", element: withSuspense(ForgotPassword) },
   {
     path: "/",
     element: (

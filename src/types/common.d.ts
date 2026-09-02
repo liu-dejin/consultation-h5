@@ -1,5 +1,5 @@
 export type LoginReq = {
-  mobile: string;
+  email: string;
   password?: string;
   code?: string;
 };
@@ -7,7 +7,23 @@ export type LoginRes = {
   token: string;
   refreshToken: string;
   avatar: string;
-  mobile: string;
+  email: string;
   account: string;
   id: string;
+};
+
+export type SendEmailCodeReq = {
+  email: string;
+};
+
+export type RegisterByEmailReq = {
+  email: string;
+  code: string;
+  password: string;
+};
+
+export type ForgotPasswordReq = {
+  email: string;
+  code: string;
+  password: string;
 };
