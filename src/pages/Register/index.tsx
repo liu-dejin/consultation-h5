@@ -1,4 +1,4 @@
-import { RegisterByEmailApi, SendEmailCodeApi } from "@/api/common";
+import { RegisterByEmailApi, SendRegisterCodeApi } from "@/api/common";
 import { Button, Checkbox, Form, Input, Toast } from "antd-mobile";
 import { EyeInvisibleOutline, EyeOutline, LeftOutline, RightOutline } from "antd-mobile-icons";
 import { useEffect, useRef, useState } from "react";
@@ -61,7 +61,7 @@ const Register: React.FC = () => {
     if (!email) return;
     setSending(true);
     try {
-      await SendEmailCodeApi({ email });
+      await SendRegisterCodeApi({ email });
       Toast.show({ content: "验证码已发送至邮箱，请注意查收" });
       setCountdown(RESEND_INTERVAL);
     } catch {
