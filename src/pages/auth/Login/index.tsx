@@ -1,5 +1,5 @@
-import { LoginByCodeApi, LoginByPasswordApi, SendLoginCodeApi } from "@/api/common";
-import type { LoginReq } from "@/types/common";
+import { LoginByCodeApi, LoginByPasswordApi, SendLoginCodeApi } from "@/api/auth";
+import type { LoginReq } from "@/types/auth";
 import { useUserStore } from "@/stores/useUserStore";
 import { Button, Checkbox, Form, Image, Input, Toast } from "antd-mobile";
 import { EyeInvisibleOutline, EyeOutline, LeftOutline, RightOutline } from "antd-mobile-icons";
@@ -53,7 +53,7 @@ const Login: React.FC = () => {
     };
   }, [countdown]);
 
-  if (user?.token) {
+  if (user?.token && user?.refreshToken) {
     return <Navigate to={redirect} replace />;
   }
 

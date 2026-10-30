@@ -1,19 +1,4 @@
-import PageContainer from "@/components/PageContainer";
-import { Card, List } from "antd-mobile";
-
-/**
- * 我的示例（空页面，仅作占位）
- */
+// TODO: 我的自己写（退出登录可参考：useUserStore 拿用户，LogoutApi + Dialog.confirm，最后 delUser + 跳 /login）
 export default function Profile() {
-  return (
-    <PageContainer title="我的">
-      <Card>
-        <List>
-          <List.Item>示例项 1</List.Item>
-          <List.Item>示例项 2</List.Item>
-          <List.Item>示例项 3</List.Item>
-        </List>
-      </Card>
-    </PageContainer>
-  );
+  return <div>Profile</div>;
 }

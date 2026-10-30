@@ -1,36 +1,25 @@
 import { create } from "zustand";
 import { STORAGE_KEYS } from "@/constants";
 import { getStorage, removeStorage, setStorage } from "@/utils/storage";
-import type { LoginRes as User } from "@/types/common";
+import type { LoginRes as User } from "@/types/auth";
 
 interface UserState {
   user: User | undefined;
   setUser: (u: User) => void;
   delUser: () => void;
-  clearUser: () => void;
 }
 
 const STORAGE_KEY = STORAGE_KEYS.TOKEN;
 
-function readInitialUser(): User | undefined {
-  const stored = getStorage<User>(STORAGE_KEY, undefined);
-  return stored ?? undefined;
-}
-
 export const useUserStore = create<UserState>((set) => ({
-  user: readInitialUser(),
-
+  // 启动时从 localStorage 恢复登录态，没存过就是未登录
+  user: getStorage<User>(STORAGE_KEY, undefined) ?? undefined,
   setUser: (u) => {
     setStorage(STORAGE_KEY, u);
     set({ user: u });
   },
 
   delUser: () => {
-    removeStorage(STORAGE_KEY);
-    set({ user: undefined });
-  },
-
-  clearUser: () => {
     removeStorage(STORAGE_KEY);
     set({ user: undefined });
   },

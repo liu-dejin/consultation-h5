@@ -1,4 +1,4 @@
-import { ForgotPasswordApi, SendForgotCodeApi } from "@/api/common";
+import { ForgotPasswordApi, SendForgotCodeApi } from "@/api/auth";
 import { Button, Form, Input, Toast } from "antd-mobile";
 import { EyeInvisibleOutline, EyeOutline, LeftOutline } from "antd-mobile-icons";
 import { useEffect, useRef, useState } from "react";

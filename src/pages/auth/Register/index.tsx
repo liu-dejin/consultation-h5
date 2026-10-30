@@ -1,4 +1,4 @@
-import { RegisterByEmailApi, SendRegisterCodeApi } from "@/api/common";
+import { RegisterByEmailApi, SendRegisterCodeApi } from "@/api/auth";
 import { Button, Checkbox, Form, Input, Toast } from "antd-mobile";
 import { EyeInvisibleOutline, EyeOutline, LeftOutline, RightOutline } from "antd-mobile-icons";
 import { useEffect, useRef, useState } from "react";

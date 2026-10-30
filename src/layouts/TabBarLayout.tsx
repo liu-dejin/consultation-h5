@@ -1,10 +1,10 @@
 import { Outlet, useLocation, useNavigate } from "react-router";
 import { TabBar } from "antd-mobile";
-import { AppOutline, AppstoreOutline, UserOutline } from "antd-mobile-icons";
+import { AppOutline, AppstoreOutline, MessageOutline, UserOutline } from "antd-mobile-icons";
 
 /**
  * 底部 Tab 布局
- * 包含 3 个示例 Tab：首页 / 分类 / 我的
+ * 包含 4 个 Tab：首页 / 健康百科 / 消息中心 / 我的
  * 子路由通过 Outlet 渲染
  */
 export default function TabBarLayout() {
@@ -14,7 +14,8 @@ export default function TabBarLayout() {
   // 根据当前路径决定高亮的 Tab
   const getActiveKey = () => {
     const { pathname } = location;
-    if (pathname.startsWith("/category")) return "/category";
+    if (pathname.startsWith("/wiki")) return "/wiki";
+    if (pathname.startsWith("/message")) return "/message";
     if (pathname.startsWith("/profile")) return "/profile";
     return "/home";
   };
@@ -22,7 +23,8 @@ export default function TabBarLayout() {
   // Tab 配置
   const tabs = [
     { key: "/home", title: "首页", icon: <AppOutline /> },
-    { key: "/category", title: "分类", icon: <AppstoreOutline /> },
+    { key: "/wiki", title: "健康百科", icon: <AppstoreOutline /> },
+    { key: "/message", title: "消息中心", icon: <MessageOutline /> },
     { key: "/profile", title: "我的", icon: <UserOutline /> },
   ];
 
